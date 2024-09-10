@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./Libros/Icono.svg" type="image/x-icon" width="16px">
+    <title>Biblioteca</title>
+
+    <style>
+        body{
+            background-image: url(./Libros/fondo.jpg);
+            font-family: "DM Sans", sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        h1{
+            margin-top: 0;
+            font-weight: bolder;
+            color: #FFCEA2;
+            font-size: 28px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+
+        #contenedorGeneral{
+            width: 100%;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        #contenedorElementos{
+            text-align: center;
+            width: 30%;
+            margin: auto;
+            padding: 4vh;
+            background-color: #425C5A;
+            border-radius: 4vh;   
+        }
+
+
+
+        #inputVacio{
+            position: absolute;
+            text-align: center;
+            width: 20%;
+            font-size: 16px;
+            font-weight: bolder;
+            border: 1px solid #675C5A;
+            margin: auto;
+            padding: 2vh;
+            background-color: #425C5A;
+            border-radius: 2vh;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+            color: #FFCEA2;
+            display: none;
+            cursor: pointer;
+        }
+
+        #sinLibros{
+            position: absolute;
+            text-align: center;
+            width: 20%;
+            font-size: 16px;
+            font-weight: bolder;
+            border: 1px solid #675C5A;
+            margin: auto;
+            padding: 2vh;
+            background-color: #425C5A;
+            border-radius: 2vh;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+            color: #FFCEA2;
+            display: none;
+            cursor: pointer;
+        }
+
+        input{
+            width: 40%;
+            margin: 0;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #A0BDBB;
+            background: transparent;
+            padding: 1.5vh;
+            padding-bottom: 1vh;
+            font-size: 14px;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        #contenedorBotones{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 1.5vh;
+            width: 42%;
+            gap: 2.5vh;
+        }
+
+
+
+        .botonLibro{
+            display: flex;
+            padding: 1vh;
+            font-family: "DM Sans", sans-serif;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            border-radius: 2vh;
+            cursor: pointer;
+            font-size: 15px;
+            background-color:#FFCEA2;
+            color: #425C5A;
+        }
+
+        .botonLibro:hover{
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .iconoLibro{
+            height: 4vh;
+            width: 4vh;
+        }
+
+
+        #contenedorListado{
+            background-color: #FFCEA2;
+            width: 40%;
+            margin: auto;
+            border-radius: 2vh;
+            color: #425C5A;
+            padding: 1vh;
+            margin-top: 2.5vh;
+        }
+
+        ul#almacenadoDeLibros{
+            margin: 0;
+            padding: 0;
+        }
+        #tituloListado{
+            margin: 0;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div id="contenedorGeneral">
+        <div id="contenedorElementos">
+            <div id="contenedorLogo">
+                <img src="../PrimerosPasos/Libros/logo.svg" alt="Logotipo" width="100">
+                <h1>Galería del libro</h1>
+            </div>
+
+            <div id="contenedorPrompt">
+                <input id="inputDelUsuario" type="text" placeholder="Por favor ingrese el nombre del libro.">
+
+            </div>
+
+            <div id="contenedorBotones">
+                <button id="agregarLibro" class="botonLibro">
+                    <img src="./Libros/agregarlibro.svg" alt="" class="iconoLibro">Agregar libro
+                </button>
+
+                <button id="borrarLibro" class="botonLibro">
+                    <img src="./Libros/quitarlibro.svg" alt="" class="iconoLibro">Eliminar libro
+
+                </button>
+            </div>
+
+            <div id="contenedorListado">
+                <h2 id="tituloListado">Listado de libros</h2>
+                <span id="listaVacia">El listado esta vacio</span>
+                <ul id="almacenadoDeLibros"></ul>
+
+            </div>
+        </div>
+    </div>
+
+        <div id="inputVacio">
+            <p>POR FAVOR INGRESE EL NOMBRE DE UN LIBRO.</p>
+        </div>
+
+        <div id="sinLibros">
+            <p>NO HAY LIBROS PARA ELIMINAR.</p>
+        </div>
+
+    <script src="ejercicio-libro.js"></script>
+</body>
+</html>
